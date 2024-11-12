@@ -1,0 +1,22 @@
+<!-- templates/update.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Edit Mahasiswa</h1>
+    <form method="POST">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" value="{{ mahasiswa[1] }}" required><br><br>
+        <label for="npm">NPM:</label>
+        <input type="text" id="npm" name="npm" value="{{ mahasiswa[2] }}" required><br><br>
+        <label for="jurusan">Jurusan:</label>
+        <input type="text" id="jurusan" name="jurusan" value="{{ mahasiswa[3] }}" required><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Daftar Mahasiswa</h1>
+    <a href="{{ url_for('buat_mahasiswa') }}">Tambah Mahasiswa</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>NPM</th>
+                <th>Jurusan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mahasiswa in mahasiswa_list %}
+                <tr>
+                    <td>{{ mahasiswa[0] }}</td>
+                    <td>{{ mahasiswa[1] }}</td>
+                    <td>{{ mahasiswa[2] }}</td>
+                    <td>{{ mahasiswa[3] }}</td>
+                    <td>
+                        <a href="{{ url_for('update_mahasiswa', mahasiswa_id=mahasiswa[0]) }}">Edit</a>
+                        <a href="{{ url_for('hapus_mahasiswa', mahasiswa_id=mahasiswa[0]) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

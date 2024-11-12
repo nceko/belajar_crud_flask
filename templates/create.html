@@ -1,0 +1,22 @@
+<!-- templates/create.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Tambah Mahasiswa</h1>
+    <form method="POST">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br><br>
+        <label for="npm">NPM:</label>
+        <input type="text" id="npm" name="npm" required><br><br>
+        <label for="jurusan">Jurusan:</label>
+        <input type="text" id="jurusan" name="jurusan" required><br><br>
+        <button type="submit">Tambah</button>
+    </form>
+</body>
+</html>
